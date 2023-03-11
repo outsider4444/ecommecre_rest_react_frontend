@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
 import style from "./Product.module.css";
+import Rating from "./Rating";
 
 const Product = ({product}) => {
     return (
@@ -14,13 +15,13 @@ const Product = ({product}) => {
                 </a>
                 <Card.Text as={"div"}>
                     <div className={"my-3"}>
-                        <i className={"fas fa-star"}></i> {product.rating}
-                        <span className={style.textRight}>{product.numReviews} отзывов</span>
+                        <Rating value={product.rating} text={`${product.numReviews} оценок`} color={"#f8e825"}/>
                     </div>
                 </Card.Text>
 
                 <Card.Text as={"h3"}>
-                    {product.price} рублей
+                    {product.price} <br/>
+                    руб.
                 </Card.Text>
             </Card.Body>
         </Card>
